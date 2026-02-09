@@ -10,6 +10,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ToolbarSpacer from "./ToolbarSpacer";
 import { ADMIN_NAVBAR_ITEMS } from "@/app/constants/layout.constants";
+import { useRouter } from "next/navigation";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { navigatePush } from "@/app/utils/navigation";
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) =>
@@ -41,6 +44,10 @@ const getTextSx = (open: boolean) => ({
   opacity: open ? 1 : 0,
 });
 
+function goToAdminManagementPage(router: AppRouterInstance, path: string) {
+  navigatePush(router, path);
+}
+
 interface AdminDrawerProps {
   open: boolean;
   handleDrawerClose: () => void;
@@ -53,6 +60,8 @@ export default function AdminDrawer({
   drawerMaxWidth,
   drawerMinWidth,
 }: AdminDrawerProps) {
+  const router = useRouter();
+
   return (
     <Drawer
       variant="permanent"
@@ -75,6 +84,7 @@ export default function AdminDrawer({
               key={navbarItem.path}
               disablePadding
               sx={{ display: "block" }}
+              onClick={() => goToAdminManagementPage(router, navbarItem.path)}
             >
               <ListItemButton sx={getButtonSx(open)}>
                 <ListItemIcon sx={getIconSx(open)}>

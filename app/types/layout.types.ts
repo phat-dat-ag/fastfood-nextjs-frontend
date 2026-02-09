@@ -10,3 +10,8 @@ export interface HeaderItemType {
   title: string;
   path: string;
 }
+
+export interface HeaderActionType {
+  icon: SvgIconComponent;
+  path: string;
+}
