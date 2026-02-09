@@ -1,4 +1,4 @@
-import { AdminHeaderItemType } from "../types/layout.types";
+import { AdminHeaderItemType, HeaderItemType } from "../types/layout.types";
 import HomeIcon from "@mui/icons-material/Home";
 import FastFoodIcon from "@mui/icons-material/Fastfood";
 
@@ -15,5 +15,24 @@ export const ADMIN_NAVBAR_ITEMS: Array<AdminHeaderItemType> = [
     title: "Product management",
     path: "/product-management",
     icon: FastFoodIcon,
+  },
+];
+
+export const USER_HEADER_ITEMS: Array<HeaderItemType> = [
+  {
+    title: "Trang chủ",
+    path: "/",
+  },
+  {
+    title: "Thử thách",
+    path: "/challenge",
+  },
+  {
+    title: "Khuyến mãi",
+    path: "promotion",
+  },
+  {
+    title: "Về chúng tôi",
+    path: "/about-us",
   },
 ];

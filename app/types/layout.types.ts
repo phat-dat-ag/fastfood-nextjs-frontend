@@ -5,3 +5,8 @@ export interface AdminHeaderItemType {
   path: string;
   icon: SvgIconComponent;
 }
+
+export interface HeaderItemType {
+  title: string;
+  path: string;
+}

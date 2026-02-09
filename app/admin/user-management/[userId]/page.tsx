@@ -5,5 +5,5 @@ export default async function UserDetailPage({
 }) {
   const { userId } = await params;
 
-  return <div>userId la: {userId}</div>;
+  return <div>userId: {userId}</div>;
 }
