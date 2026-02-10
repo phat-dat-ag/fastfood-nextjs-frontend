@@ -3,6 +3,13 @@ export const AUTH_ROUTES = {
   LOGIN: "/login",
 } as const;
 
+export const GUEST_ROUTES = {
+  HOME: "/",
+  PROMOTION: "/promotion",
+  CHALLENGE: "/challenge",
+  ABOUT_US: "/about-us",
+} as const;
+
 export const ADMIN_ROUTES = {
   HOME: "/admin",
   USER_MANAGEMENT: "/admin/user-management",

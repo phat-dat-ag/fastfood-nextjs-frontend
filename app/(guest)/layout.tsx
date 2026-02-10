@@ -1,12 +1,12 @@
 import Footer from "../components/Footer";
-import UserHeader from "./components/UserHeader";
+import GuestHeader from "./components/GuestHeader";
 
 export default function UserLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <UserHeader />
+      <GuestHeader />
       <main className="w-[80%] mx-auto">{children}</main>
       <Footer />
     </div>

@@ -1,3 +1,10 @@
+import CategorySegment from "../components/CategorySegment";
+
 export default function UserHomePage() {
-  return <div>user home page</div>;
+  return (
+    <div>
+      <CategorySegment />
+      user home page
+    </div>
+  );
 }
