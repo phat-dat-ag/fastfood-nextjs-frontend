@@ -8,13 +8,10 @@ import FormField from "@/app/components/forms/FormField";
 import Input from "@/app/components/forms/Input";
 import CancelButton from "@/app/components/forms/buttons/CancelButton";
 import SubmitButton from "@/app/components/forms/buttons/SubmitButton";
+import AuthRedirect from "../components/AuthRedirect";
 
 const schema = z.object({
-  username: z
-    .string()
-    .min(1, "Vui lòng nhập tên đăng nhập")
-    .min(8, "Tên đăng nhập có ít nhất 8 ký tự")
-    .max(20, "Tên đăng nhập tối đa 20 ký tự"),
+  phone: z.string().regex(/^0\d{9}$/, "Số điện thoại không hợp lệ"),
   password: z
     .string()
     .min(1, "Vui lòng nhập mật khẩu")
@@ -26,7 +23,7 @@ type FormData = z.infer<typeof schema>;
 
 function handleLoginFormSubmit(formData: FormData) {
   const loginRequest: LoginRequestType = {
-    username: formData.username,
+    phone: formData.phone,
     password: formData.password,
   };
   console.log("Submit login form", loginRequest);
@@ -34,6 +31,10 @@ function handleLoginFormSubmit(formData: FormData) {
 
 function handleCancelLogin() {
   console.log("Go back");
+}
+
+function handleGoToRegisterPage() {
+  console.log("Go to register page");
 }
 
 export default function LoginForm() {
@@ -51,15 +52,15 @@ export default function LoginForm() {
       onSubmit={handleSubmit(handleLoginFormSubmit)}
     >
       <FormField
-        targetId="username"
-        labelTitle="Tên đăng nhập"
-        errorMessage={errors.username?.message}
+        targetId="phone"
+        labelTitle="Số điện thoại"
+        errorMessage={errors.phone?.message}
       >
         <Input
-          id="username"
+          id="phone"
           type="text"
-          {...register("username")}
-          placeholder="Nhập tên đăng nhập"
+          {...register("phone")}
+          placeholder="Nhập số điện thoại"
         />
       </FormField>
       <FormField
@@ -74,6 +75,11 @@ export default function LoginForm() {
           placeholder="Nhập mật khẩu"
         />
       </FormField>
+      <AuthRedirect
+        message="Chưa có tài khoản?"
+        linkText="Đăng ký tại đây"
+        onClickFunction={handleGoToRegisterPage}
+      />
       <div className="grid grid-cols-2 gap-4">
         <CancelButton
           buttonLabel="Quay lại"
