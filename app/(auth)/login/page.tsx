@@ -1,11 +1,10 @@
-import FormTitle from "@/app/components/forms/FormTitle";
+import FormShell from "@/app/components/forms/FormShell";
 import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <FormTitle formTitle="Đăng nhập tài khoản" />
+    <FormShell formTitle="Đăng nhập tài khoản" size="md">
       <LoginForm />
-    </div>
+    </FormShell>
   );
 }
