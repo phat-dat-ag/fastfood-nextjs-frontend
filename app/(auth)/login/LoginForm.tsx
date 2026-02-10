@@ -9,6 +9,9 @@ import Input from "@/app/components/forms/Input";
 import CancelButton from "@/app/components/forms/buttons/CancelButton";
 import SubmitButton from "@/app/components/forms/buttons/SubmitButton";
 import AuthRedirect from "../components/AuthRedirect";
+import { navigateBack, navigatePush } from "@/app/utils/navigation";
+import { AUTH_ROUTES } from "@/app/constants/route.constants";
+import { useRouter } from "next/navigation";
 
 const schema = z.object({
   phone: z.string().regex(/^0\d{9}$/, "Số điện thoại không hợp lệ"),
@@ -29,15 +32,9 @@ function handleLoginFormSubmit(formData: FormData) {
   console.log("Submit login form", loginRequest);
 }
 
-function handleCancelLogin() {
-  console.log("Go back");
-}
-
-function handleGoToRegisterPage() {
-  console.log("Go to register page");
-}
-
 export default function LoginForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -78,12 +75,12 @@ export default function LoginForm() {
       <AuthRedirect
         message="Chưa có tài khoản?"
         linkText="Đăng ký tại đây"
-        onClickFunction={handleGoToRegisterPage}
+        onClickFunction={() => navigatePush(router, AUTH_ROUTES.REGISTER)}
       />
       <div className="grid grid-cols-2 gap-4">
         <CancelButton
           buttonLabel="Quay lại"
-          onClickFunction={handleCancelLogin}
+          onClickFunction={() => navigateBack(router)}
         />
         <SubmitButton buttonLabel="Đăng nhập" isDisabled={false} />
       </div>

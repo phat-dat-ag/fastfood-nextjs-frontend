@@ -1,3 +1,8 @@
+export const AUTH_ROUTES = {
+  REGISTER: "/register",
+  LOGIN: "/login",
+} as const;
+
 export const ADMIN_ROUTES = {
   HOME: "/admin",
   USER_MANAGEMENT: "/admin/user-management",

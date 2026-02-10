@@ -7,3 +7,7 @@ export const navigatePush = (router: AppRouterInstance, path: string) => {
 export const navigateReplace = (router: AppRouterInstance, path: string) => {
   router.replace(path);
 };
+
+export const navigateBack = (router: AppRouterInstance) => {
+  router.back();
+};
