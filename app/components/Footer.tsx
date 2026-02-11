@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="md:col-span-2 flex flex-col items-center md:items-start gap-4 transition-transform duration-500 hover:scale-[1.02]">
           <div className="flex items-center gap-4">
             <img
-              src="../assets/img/Aurelion_Shop_Logo.png"
+              src="/images/Aurelion_Shop_Logo.png"
               alt="Logo"
               className="w-20 h-20 object-contain rounded-full ring-2 ring-white/60 shadow-md hover:shadow-lg hover:ring-white transition-all duration-500"
             />
