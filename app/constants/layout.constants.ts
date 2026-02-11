@@ -1,5 +1,6 @@
 import {
   AdminHeaderItemType,
+  FooterSectionType,
   HeaderActionType,
   HeaderItemType,
 } from "../types/layout.types";
@@ -77,5 +78,36 @@ export const USSER_HEADER_ACTIONS: Array<HeaderActionType> = [
   {
     icon: LocalShippingIcon,
     path: USER_ROUTES.ORDER_TRACKING,
+  },
+];
+
+export const FOOTER_SECTIONS: Array<FooterSectionType> = [
+  {
+    title: "Thông tin",
+    items: [
+      { title: "Tin tức", path: "/" },
+      { title: "Khuyến mãi", path: "/" },
+      { title: "Tuyển dụng", path: "/" },
+      { title: "Nhượng quyền", path: "/" },
+      { title: "Đăng ký chào hàng", path: "/" },
+    ],
+  },
+  {
+    title: "Hỗ trợ khách hàng",
+    items: [
+      { title: "Điều khoản sử dụng", path: "/" },
+      { title: "Chính sách bảo mật", path: "/" },
+      { title: "Chính sách giao hàng", path: "/" },
+      { title: "Tham gia thử thách", path: "/" },
+      { title: "Chính sách thành viên", path: "/" },
+    ],
+  },
+  {
+    title: "Kênh liên hệ",
+    items: [
+      { title: "Facebook", path: "/" },
+      { title: "Instagram", path: "/" },
+      { title: "Zalo", path: "/" },
+    ],
   },
 ];

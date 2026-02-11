@@ -15,3 +15,13 @@ export interface HeaderActionType {
   icon: SvgIconComponent;
   path: string;
 }
+
+interface FooterItemType {
+  title: string;
+  path: string;
+}
+
+export interface FooterSectionType {
+  title: string;
+  items: Array<FooterItemType>;
+}
