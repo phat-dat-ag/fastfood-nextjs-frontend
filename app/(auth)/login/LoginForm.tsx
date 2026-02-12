@@ -19,7 +19,7 @@ const schema = z.object({
     .string()
     .min(1, "Vui lòng nhập mật khẩu")
     .min(8, "Mật khẩu phải có ít nhất 8 ký tự")
-    .max(20, "mật khẩu tối đa 20 ký tự"),
+    .max(20, "Mật khẩu tối đa 20 ký tự"),
 });
 
 type FormData = z.infer<typeof schema>;
