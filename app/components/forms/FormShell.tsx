@@ -17,9 +17,9 @@ export default function FormShell({
 }: FormShellProps) {
   return (
     <div
-      className={`mx-auto mt-10 w-full ${SIZE_MAP[size]} rounded-xl border bg-white p-8 shadow-lg`}
+      className={`mx-auto mt-10 w-full ${SIZE_MAP[size]} rounded-2xl border border-gray-100 bg-white/95 p-8 shadow-2xl backdrop-blur-sm transition"`}
     >
-      <h1 className="mb-6 text-center text-3xl font-semibold text-orange-400">
+      <h1 className="mb-8 text-center text-3xl font-extrabold tracking-wide bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
         {formTitle}
       </h1>
       {children}

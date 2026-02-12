@@ -8,7 +8,7 @@ export default function CancelButton({
 }: CancelButtonProps) {
   return (
     <button
-      className="border rounded p-2"
+      className="rounded-lg border border-orange-400 px-4 py-2 font-medium text-orange-500 transition hover:bg-orange-50 active:scale-[0.98]"
       type="button"
       onClick={onClickFunction}
     >

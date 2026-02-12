@@ -13,9 +13,11 @@ export default function FormField({
 }: FormFieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={targetId}>{labelTitle}: </label>
+      <label htmlFor={targetId} className="text-sm font-medium text-gray-700">
+        {labelTitle}:{" "}
+      </label>
       {children}
-      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+      {errorMessage && <p className="text-sm text-red-500">{errorMessage}</p>}
     </div>
   );
 }

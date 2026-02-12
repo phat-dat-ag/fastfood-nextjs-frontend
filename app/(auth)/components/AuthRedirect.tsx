@@ -9,11 +9,11 @@ export default function AuthRedirect({
   onClickFunction,
 }: AuthRedirectProps) {
   return (
-    <p>
+    <p className="mt-4 text-center text-sm text-gray-600">
       {message}{" "}
       <button
         type="button"
-        className="text-orange-500 hover:text-orange-300"
+        className="ml-1 font-medium text-orange-500 transition hover:text-orange-600 hover:underline"
         onClick={onClickFunction}
       >
         {linkText}

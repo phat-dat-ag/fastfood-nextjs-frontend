@@ -1,6 +1,7 @@
 export const AUTH_ROUTES = {
   REGISTER: "/register",
   LOGIN: "/login",
+  FORGET_PASSWORD: "/forget-password",
 } as const;
 
 export const GUEST_ROUTES = {

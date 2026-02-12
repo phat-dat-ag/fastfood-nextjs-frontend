@@ -73,6 +73,13 @@ export default function LoginForm() {
         />
       </FormField>
       <AuthRedirect
+        message="Quên mật khẩu?"
+        linkText="Lấy lại mật khẩu tại đây"
+        onClickFunction={() =>
+          navigatePush(router, AUTH_ROUTES.FORGET_PASSWORD)
+        }
+      />
+      <AuthRedirect
         message="Chưa có tài khoản?"
         linkText="Đăng ký tại đây"
         onClickFunction={() => navigatePush(router, AUTH_ROUTES.REGISTER)}
